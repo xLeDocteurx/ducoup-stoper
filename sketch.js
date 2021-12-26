@@ -82,11 +82,10 @@ function drawClassification() {
   if(!!personResult) {
     fill(50);
     textSize(32);
-    text(personResult.label, width / 6 * 2, height / 4 * 2);
     if (personResult.label != "Bruit de fond") {
-      text("Ca parle", width / 6 * 4, height / 4 * 3);
+      text("Ca parle", width / 6 * 2, height / 4 * 3);
     } else {
-      text("Ca parle pas", width / 6 * 4, height / 4 * 3);
+      text("Ca parle pas", width / 6 * 2, height / 4 * 3);
     }
   }
   if(!!wordResult && wordResult.confidence > 0.5) {
