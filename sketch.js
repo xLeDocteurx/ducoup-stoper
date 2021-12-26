@@ -89,10 +89,12 @@ function drawClassification() {
     fill(50);
     textSize(32);
     if(wordResult.label != "Bruit de fond") {
-      text(wordResult.label, width / 6 * 4, height / 4 * 3);
+      // text(wordResult.label, width / 6 * 4, height / 4 * 3);
+      text("Ca parle", width / 6 * 4, height / 4 * 3);
       playSound();
     } else {
-      text("...", width / 6 * 4, height / 4 * 3);
+      // text("...", width / 6 * 4, height / 4 * 3);
+      text("Ca parle pas", width / 6 * 4, height / 4 * 3);
     }
   }
 }
