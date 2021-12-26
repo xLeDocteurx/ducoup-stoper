@@ -102,7 +102,7 @@ function drawClassification() {
 
 function playSound() {
   if (sound.isPlaying()) {
-    sound.stop()
+    // sound.stop()
   } else {
     sound.play();
   }
