@@ -79,23 +79,23 @@ function drawVolumeMeter(vol) {
 
 // label confidence
 function drawClassification() {
-  if(!!personResult) {
-    fill(50);
-    textSize(32);
-    if (personResult.label != "Bruit de fond") {
-      text("Ca parle", width / 6 * 2, height / 4 * 2);
-    } else {
-      text("Ca parle pas", width / 6 * 2, height / 4 * 2);
-    }
-  }
+  // if(!!personResult) {
+  //   fill(50);
+  //   textSize(32);
+  //   if (personResult.label != "Bruit de fond") {
+  //     text("Ca parle", width / 6 * 2, height / 4 * 2);
+  //   } else {
+  //     text("Ca parle pas", width / 6 * 2, height / 4 * 2);
+  //   }
+  // }
   if(!!wordResult && wordResult.confidence > 0.5) {
     fill(50);
     textSize(32);
     if(wordResult.label != "Bruit de fond") {
-      text(wordResult.label, width / 6 * 4, height / 4 * 2);
+      text(wordResult.label, width / 6 * 3, height / 4 * 2);
       playSound();
     } else {
-      text("...", width / 6 * 4, height / 4 * 2);
+      text("...", width / 6 * 3, height / 4 * 2);
     }
   }
 }
