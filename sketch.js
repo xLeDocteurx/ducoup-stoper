@@ -8,9 +8,9 @@ let personResult;
 let wordResult;
 
 function preload() {
-  // sound = loadSound('./alarm.m4a');
-  sound = loadSound('./doorbell.mp3');
-  personClassifier = ml5.soundClassifier("https://teachablemachine.withgoogle.com/models/yqj824Xmv/model.json");
+  sound = loadSound('./alarm.m4a');
+  // sound = loadSound('./doorbell.mp3');
+  personClassifier = ml5.soundClassifier("https://teachablemachine.withgoogle.com/models/BYxkgpj_i/model.json");
   wordClassifier = ml5.soundClassifier("https://teachablemachine.withgoogle.com/models/psSchNDLN/model.json");
 }
 
@@ -65,7 +65,13 @@ function drawBackground() {
 }
 
 function drawVolumeMeter(vol) {
-  fill(127);
+  if (vol < 0.33) {
+    fill(96, 169, 23)
+  } else if (vol < 0.66) {
+    fill(250, 104, 0)
+  } else {
+    fill(229, 20, 0)
+  };
   stroke(0);
   let h = map(vol, 0, 1, 0, height);
   rect(0, height, 50, -h);
@@ -90,8 +96,6 @@ function drawClassification() {
     }
   }
 }
-
-
 
 function playSound() {
   if (sound.isPlaying()) {
